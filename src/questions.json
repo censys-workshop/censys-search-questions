@@ -1,5 +1,35 @@
 [
   {
+    "id": "ipv4",
+    "title": "How can I find hosts with a specific IPv4 address?",
+    "query": "ip: 1.1.1.1",
+    "tags": ["IP Address"]
+  },
+  {
+    "id": "ipv4-range",
+    "title": "How can I find hosts in a specific IPv4 range?",
+    "query": "ip: 1.1.1.0/24",
+    "tags": ["IP Address"]
+  },
+  {
+    "id": "ipv6",
+    "title": "How can I find hosts with a specific IPv6 address?",
+    "query": "ip: 2001:4860:4860::8888",
+    "tags": ["IP Address"]
+  },
+  {
+    "id": "asn",
+    "title": "How can I find hosts with a specific ASN?",
+    "query": "autonomous_system.asn: 15169",
+    "tags": ["ASN"]
+  },
+  {
+    "id": "asn-name",
+    "title": "How can I find hosts with a specific ASN name?",
+    "query": "autonomous_system.name: Cloudflare",
+    "tags": ["ASN"]
+  },
+  {
     "id": "city",
     "title": "How can I find hosts by city?",
     "query": "location.city: Moscow",
@@ -24,21 +54,15 @@
     "tags": ["Geolocation"]
   },
   {
-    "id": "os",
-    "title": "How can I find hosts with a specific OS?",
-    "query": "operating_system.product: Windows",
-    "tags": ["Operating System"]
-  },
-  {
     "id": "service-name",
     "title": "How can I find hosts running a specific service?",
-    "query": "service.service_name: SSH",
+    "query": "services.service_name: SSH",
     "tags": ["Service"]
   },
   {
     "id": "service-port",
     "title": "How can I find hosts with a specific port open?",
-    "query": "service.port: 22",
+    "query": "services.port: 22",
     "tags": ["Service"]
   },
   {
@@ -58,6 +82,18 @@
     "title": "How can I find hosts with a specific software version installed?",
     "query": "services.software: (product: OpenSSH and version: 7.4)",
     "tags": ["Service", "Software", "Nested"]
+  },
+  {
+    "id": "software-vendor",
+    "title": "How can I find hosts running software from a specific vendor?",
+    "query": "services.software.vendor: Plex",
+    "tags": ["Service", "Software"]
+  },
+  {
+    "id": "os",
+    "title": "How can I find hosts with a specific OS?",
+    "query": "operating_system.product: Windows",
+    "tags": ["Operating System"]
   },
   {
     "id": "html-title",
@@ -112,6 +148,12 @@
     "title": "How can I find IoT devices?",
     "query": "labels: IoT",
     "tags": ["IoT", "Label"]
+  },
+  {
+    "id": "scada-label",
+    "title": "How can I find SCADA devices?",
+    "query": "labels: SCADA",
+    "tags": ["SCADA", "Label"]
   },
   {
     "id": "c2-label",
