@@ -16,7 +16,7 @@ const Sidebar = () => {
       <h2 className="font-bold text-xl">Tags</h2>
       <div className="flex flex-col">
         <a
-          href="/"
+          href={import.meta.env.BASE_URL}
           className="text-gray-700 hover:bg-gray-200 rounded-md p-2 m-1"
         >
           All
@@ -25,7 +25,7 @@ const Sidebar = () => {
         {tags.map((tag) => (
           <a
             key={tag}
-            href={`/?tag=${encodeURIComponent(tag)}`}
+            href={import.meta.env.BASE_URL + `?tag=${encodeURIComponent(tag)}`}
             className="text-gray-700 hover:bg-gray-200 rounded-md p-2 m-1"
           >
             {tag}

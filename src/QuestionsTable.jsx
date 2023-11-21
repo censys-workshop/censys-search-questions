@@ -61,7 +61,7 @@ const QuestionsTable = () => {
                   <a
                     href={`https://search.censys.io/search?resource=hosts&q=${encodeURIComponent(
                       question.query
-                    )}`}
+                    )}&ref=questions`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:underline"
@@ -76,7 +76,7 @@ const QuestionsTable = () => {
                   {question.tags.map((tag) => (
                     <a
                       key={tag}
-                      href={`/?tag=${encodeURIComponent(tag)}`}
+                      href={import.meta.env.BASE_URL + `?tag=${encodeURIComponent(tag)}`}
                       className="inline-block bg-blue-500 text-white px-2 py-1 rounded-full text-xs mr-2"
                     >
                       {tag}
