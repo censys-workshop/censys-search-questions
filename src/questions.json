@@ -1,0 +1,128 @@
+[
+  {
+    "id": "city",
+    "title": "How can I find hosts by city?",
+    "query": "location.city: Moscow",
+    "tags": ["Geolocation"]
+  },
+  {
+    "id": "country",
+    "title": "How can I find hosts by country?",
+    "query": "location.country: Russia",
+    "tags": ["Geolocation"]
+  },
+  {
+    "id": "state",
+    "title": "How can I find hosts by state?",
+    "query": "location.province: Michigan",
+    "tags": ["Geolocation"]
+  },
+  {
+    "id": "state-city",
+    "title": "How can I find hosts by state and city?",
+    "query": "location.province: Michigan and location.city: Detroit",
+    "tags": ["Geolocation"]
+  },
+  {
+    "id": "os",
+    "title": "How can I find hosts with a specific OS?",
+    "query": "operating_system.product: Windows",
+    "tags": ["Operating System"]
+  },
+  {
+    "id": "service-name",
+    "title": "How can I find hosts running a specific service?",
+    "query": "service.service_name: SSH",
+    "tags": ["Service"]
+  },
+  {
+    "id": "service-port",
+    "title": "How can I find hosts with a specific port open?",
+    "query": "service.port: 22",
+    "tags": ["Service"]
+  },
+  {
+    "id": "service-port-name",
+    "title": "How can I find hosts with a specific service on a specific port?",
+    "query": "service: (port: 22 and service_name: SSH)",
+    "tags": ["Service", "Nested"]
+  },
+  {
+    "id": "software",
+    "title": "How can I find hosts with a specific software installed?",
+    "query": "services.software.product: CrushFTP",
+    "tags": ["Service", "Software"]
+  },
+  {
+    "id": "software-version",
+    "title": "How can I find hosts with a specific software version installed?",
+    "query": "services.software: (product: OpenSSH and version: 7.4)",
+    "tags": ["Service", "Software", "Nested"]
+  },
+  {
+    "id": "html-title",
+    "title": "How can I find hosts with a specific HTML title?",
+    "query": "services.http.response.html_title: \"Welcome to nginx!\"",
+    "tags": ["Service", "Web Technology"]
+  },
+  {
+    "id": "html-title-regex",
+    "title": "How can I find hosts with a specific HTML title using a regex?",
+    "query": "services.http.response.html_title: /Welcome to nginx!/",
+    "tags": ["Service", "Web Technology"]
+  },
+  {
+    "id": "html-body",
+    "title": "How can I find hosts with a specific HTML body?",
+    "query": "services.http.response.html_body: \"Welcome to nginx!\"",
+    "tags": ["Service", "Web Technology"]
+  },
+  {
+    "id": "http-body-hash",
+    "title": "How can I find hosts with a specific HTTP body hash?",
+    "query": "services.http.response.body_hash=\"sha1:75710e20f9c5609e3325dd9805d690a3647f1af0\"",
+    "tags": ["Service", "Web Technology"]
+  },
+  {
+    "id": "http-status",
+    "title": "How can I find hosts with a specific HTTP status code?",
+    "query": "services.http.response.status_code: 200",
+    "tags": ["Service", "Web Technology"]
+  },
+  {
+    "id": "http-headers",
+    "title": "How can I find hosts with a specific HTTP header?",
+    "query": "services.http.response.headers: (name: Server and value: nginx)",
+    "tags": ["Service", "Web Technology", "Nested"]
+  },
+  {
+    "id": "subject-cn",
+    "title": "How can I find hosts with a specific SSL certificate subject CN?",
+    "query": "services.tls.certificates.leaf_data.subject.common_name: \"localhost\"",
+    "tags": ["Service", "Web Technology", "TLS"]
+  },
+  {
+    "id": "subject-dn",
+    "title": "How can I find hosts with a specific SSL certificate subject DN?",
+    "query": "services.tls.certificates.leaf_data.subject_dn: \"CN=localhost\"",
+    "tags": ["Service", "Web Technology", "TLS"]
+  },
+  {
+    "id": "iot-label",
+    "title": "How can I find IoT devices?",
+    "query": "labels: IoT",
+    "tags": ["IoT", "Label"]
+  },
+  {
+    "id": "c2-label",
+    "title": "How can I find hosts with the C2 label?",
+    "query": "labels: C2",
+    "tags": ["Malware", "Label"]
+  },
+  {
+    "id": "open-dir-label",
+    "title": "How can I find hosts with open directories?",
+    "query": "labels: open-dir",
+    "tags": ["Label"]
+  }
+]
