@@ -117,7 +117,7 @@
     "id": "http-body-hash",
     "title": "How can I find hosts with a specific HTTP body hash?",
     "query": "services.http.response.body_hash=\"sha1:75710e20f9c5609e3325dd9805d690a3647f1af0\"",
-    "tags": ["Service", "Web Technology"]
+    "tags": ["Service", "Web Technology", "Hash"]
   },
   {
     "id": "http-status",
@@ -144,6 +144,24 @@
     "tags": ["Service", "Web Technology", "TLS"]
   },
   {
+    "id": "issuer-cn",
+    "title": "How can I find hosts with a specific SSL certificate issuer CN?",
+    "query": "services.tls.certificates.leaf_data.issuer.common_name: \"localhost\"",
+    "tags": ["Service", "Web Technology", "TLS"]
+  },
+  {
+    "id": "issuer-dn",
+    "title": "How can I find hosts with a specific SSL certificate issuer DN?",
+    "query": "services.tls.certificates.leaf_data.issuer_dn: \"CN=localhost\"",
+    "tags": ["Service", "Web Technology", "TLS"]
+  },
+  {
+    "id": "certificate-fingerprint",
+    "title": "How can I find hosts with a specific SSL certificate fingerprint?",
+    "query": "services.tls.certificate.fingerprint_sha256: \"e827dd2376f59c655eb5bae5499977dd08d3f851573c4cf5688ded097205a7dd\"",
+    "tags": ["Service", "Web Technology", "TLS", "Hash"]
+  },
+  {
     "id": "iot-label",
     "title": "How can I find IoT devices?",
     "query": "labels: IoT",
@@ -165,6 +183,12 @@
     "id": "open-dir-label",
     "title": "How can I find hosts with open directories?",
     "query": "labels: open-dir",
+    "tags": ["Label"]
+  },
+  {
+    "id": "honeypot-labels",
+    "title": "How can I find honeypots?",
+    "query": "labels: {tarpits, truncated}",
     "tags": ["Label"]
   }
 ]
