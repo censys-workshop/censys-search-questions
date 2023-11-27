@@ -116,7 +116,7 @@
   {
     "id": "http-body-hash",
     "title": "How can I find hosts with a specific HTTP body hash?",
-    "query": "services.http.response.body_hash=\"sha1:75710e20f9c5609e3325dd9805d690a3647f1af0\"",
+    "query": "services.http.response.body_hash: \"sha1:75710e20f9c5609e3325dd9805d690a3647f1af0\"",
     "tags": ["Service", "Web Technology", "Hash"]
   },
   {
