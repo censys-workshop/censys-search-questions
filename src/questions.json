@@ -190,5 +190,23 @@
     "title": "How can I find honeypots?",
     "query": "labels: {tarpits, truncated}",
     "tags": ["Label"]
+  },
+  {
+    "id": "open-dir-with-c2-label",
+    "title": "How can I find hosts with open directories and the C2 label?",
+    "query": "labels: open-dir and labels: C2",
+    "tags": ["Label", "Malware"]
+  },
+  {
+    "id": "cobalt-strike-servers",
+    "title": "How can I find Cobalt Strike servers?",
+    "query": "services.service_name: COBALT_STRIKE",
+    "tags": ["Malware", "Service"]
+  },
+  {
+    "id": "havoc-c2-servers",
+    "title": "How can I find Havoc C2 servers?",
+    "query": "services.software.product: Havoc",
+    "tags": ["Malware", "Service", "Software"]
   }
 ]
