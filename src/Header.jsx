@@ -14,6 +14,12 @@ const Header = () => {
     []
   );
 
+  // Get the query
+  const query = urlParams.get("query");
+
+  // If the query is defined, sanitize it
+  const sanitizedQuery = query ? sanitizeHtml(query) : null;
+
   // If the tag is defined, then we filter the questions
   const tag = urlParams.get("tag");
 
@@ -30,9 +36,22 @@ const Header = () => {
         ?.icon
     : null;
 
+  // Handle search bar
+  const onSearchKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const query = e.target.value;
+      if (query) {
+        window.location.href =
+          import.meta.env.BASE_URL + `?query=${encodeURIComponent(query)}`;
+      } else {
+        window.location.href = import.meta.env.BASE_URL;
+      }
+    }
+  };
+
   return (
     <header className="bg-white shadow">
-      <div className="mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="mx-auto py-6 md:py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo and title container */}
         <div className="flex items-center">
           <div className="h-10 w-10 md:h-12 md:w-12 mr-2 rounded-full flex justify-center items-center">
@@ -59,21 +78,8 @@ const Header = () => {
           type="text"
           className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 w-3/4 md:w-1/2 lg:w-1/3"
           placeholder="Search..."
-          defaultValue={new URLSearchParams(window.location.search).get(
-            "query"
-          )}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              const query = e.target.value;
-              if (query) {
-                window.location.href =
-                  import.meta.env.BASE_URL +
-                  `?query=${encodeURIComponent(query)}`;
-              } else {
-                window.location.href = import.meta.env.BASE_URL;
-              }
-            }
-          }}
+          defaultValue={sanitizedQuery}
+          onKeyDown={onSearchKeyDown}
         />
       </div>
     </header>
