@@ -6,9 +6,15 @@
     "tags": ["IP Address"]
   },
   {
+    "id": "ipv4-subnet",
+    "title": "How can I find hosts in a specific IPv4 subnet?",
+    "query": "ip: 1.1.1.0/24",
+    "tags": ["IP Address"]
+  },
+  {
     "id": "ipv4-range",
     "title": "How can I find hosts in a specific IPv4 range?",
-    "query": "ip: 1.1.1.0/24",
+    "query": "ip: [1.1.1.0 to 1.1.1.255]",
     "tags": ["IP Address"]
   },
   {
@@ -21,13 +27,13 @@
     "id": "asn",
     "title": "How can I find hosts with a specific ASN?",
     "query": "autonomous_system.asn: 15169",
-    "tags": ["ASN"]
+    "tags": ["Autonomous System"]
   },
   {
     "id": "asn-name",
     "title": "How can I find hosts with a specific ASN name?",
     "query": "autonomous_system.name: Cloudflare",
-    "tags": ["ASN"]
+    "tags": ["Autonomous System"]
   },
   {
     "id": "city",
@@ -72,13 +78,13 @@
     "tags": ["Service", "Nested"]
   },
   {
-    "id": "software",
+    "id": "software-product",
     "title": "How can I find hosts with a specific software installed?",
     "query": "services.software.product: CrushFTP",
     "tags": ["Service", "Software"]
   },
   {
-    "id": "software-version",
+    "id": "software-product-version",
     "title": "How can I find hosts with a specific software version installed?",
     "query": "services.software: (product: OpenSSH and version: 7.4)",
     "tags": ["Service", "Software", "Nested"]
@@ -88,6 +94,12 @@
     "title": "How can I find hosts running software from a specific vendor?",
     "query": "services.software.vendor: Plex",
     "tags": ["Service", "Software"]
+  },
+  {
+    "id": "software-product-country",
+    "title": "How can I find hosts running software from a specific country?",
+    "query": "location.country: Russia and services.software.product: gSOAP",
+    "tags": ["Service", "Software", "Geolocation"]
   },
   {
     "id": "os",
@@ -132,9 +144,9 @@
     "tags": ["Service", "Web Technology", "Nested"]
   },
   {
-    "id": "subject-cn",
-    "title": "How can I find hosts with a specific SSL certificate subject CN?",
-    "query": "services.tls.certificates.leaf_data.subject.common_name: \"localhost\"",
+    "id": "certificate-names",
+    "title": "How can I find hosts with a specific domain in their SSL certificate?",
+    "query": "services.tls.certificate.names: \"example.com\"",
     "tags": ["Service", "Web Technology", "TLS"]
   },
   {
@@ -144,15 +156,21 @@
     "tags": ["Service", "Web Technology", "TLS"]
   },
   {
-    "id": "issuer-cn",
-    "title": "How can I find hosts with a specific SSL certificate issuer CN?",
-    "query": "services.tls.certificates.leaf_data.issuer.common_name: \"localhost\"",
+    "id": "subject-cn",
+    "title": "How can I find hosts with a specific SSL certificate subject CN?",
+    "query": "services.tls.certificates.leaf_data.subject.common_name: \"localhost\"",
     "tags": ["Service", "Web Technology", "TLS"]
   },
   {
     "id": "issuer-dn",
     "title": "How can I find hosts with a specific SSL certificate issuer DN?",
     "query": "services.tls.certificates.leaf_data.issuer_dn: \"CN=localhost\"",
+    "tags": ["Service", "Web Technology", "TLS"]
+  },
+  {
+    "id": "issuer-cn",
+    "title": "How can I find hosts with a specific SSL certificate issuer CN?",
+    "query": "services.tls.certificates.leaf_data.issuer.common_name: \"localhost\"",
     "tags": ["Service", "Web Technology", "TLS"]
   },
   {
@@ -192,9 +210,9 @@
     "tags": ["Label"]
   },
   {
-    "id": "open-dir-with-c2-label",
-    "title": "How can I find hosts with open directories and the C2 label?",
-    "query": "labels: open-dir and labels: C2",
+    "id": "open-dir-with-c2-label-without-honeypot-label",
+    "title": "How can I find hosts with open directories and C2s that are not honeypots?",
+    "query": "labels: open-dir and labels: C2 and not labels: {tarpits, truncated}",
     "tags": ["Label", "Malware"]
   },
   {
@@ -208,5 +226,11 @@
     "title": "How can I find Havoc C2 servers?",
     "query": "services.software.product: Havoc",
     "tags": ["Malware", "Service", "Software"]
+  },
+  {
+    "id": "atg-servers",
+    "title": "How can I find ATG servers?",
+    "query": "services.service_name: ATG",
+    "tags": ["Malware", "Service"]
   }
 ]
