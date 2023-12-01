@@ -144,6 +144,12 @@
     "tags": ["Service", "Web Technology", "Nested"]
   },
   {
+    "id": "software-product-html-title",
+    "title": "How can I find hosts running a specific software with a specific HTML title?",
+    "query": "services: (software.product: nginx and http.response.html_title: \"Welcome to nginx!\")",
+    "tags": ["Service", "Software", "Web Technology", "Nested"]
+  },
+  {
     "id": "certificate-names",
     "title": "How can I find hosts with a specific domain in their SSL certificate?",
     "query": "services.tls.certificate.names: \"example.com\"",
